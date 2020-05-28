@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/lblFilter"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="5dp"
+        android:fontFamily="@font/lato_bold"
+        android:gravity="start|center_vertical"
+        android:text="@string/filter_content"
+        android:textAlignment="textStart"
+        android:textColor="@color/textDarkGray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/btnFilter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnFilter"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/transparent"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintBottom_toBottomOf="@id/lblFilter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/lblFilter" />
+
+    <TextView
+        android:id="@+id/lblSubject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/subject"
+        android:textColor="@color/textLightGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblFilter" />
+
+    <TextView
+        android:id="@+id/lblGrade"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/grade"
+        android:textColor="@color/textLightGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblSubject" />
+
+    <TextView
+        android:id="@+id/lblMedium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/medium"
+        android:textColor="@color/textLightGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblGrade" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupMedia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        app:chipSpacingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblMedium">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipSinhala"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="Sinhala"
+            android:textColor="@color/background"
+            app:checkedIcon="@drawable/ic_check"
+            app:checkedIconVisible="true"
+            app:chipBackgroundColor="@color/pink"
+            app:chipEndPadding="15dp"
+            app:chipIconEnabled="false"
+            app:chipMinHeight="35dp"
+            app:chipStartPadding="15dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipEnglish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="English"
+            android:textColor="@color/background"
+            app:checkedIcon="@drawable/ic_check"
+            app:checkedIconVisible="true"
+            app:chipBackgroundColor="@color/pink"
+            app:chipEndPadding="15dp"
+            app:chipIconEnabled="false"
+            app:chipMinHeight="35dp"
+            app:chipStartPadding="15dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipTamil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="Tamil"
+            android:textColor="@color/background"
+            app:checkedIcon="@drawable/ic_check"
+            app:checkedIconVisible="true"
+            app:chipBackgroundColor="@color/pink"
+            app:chipEndPadding="15dp"
+            app:chipIconEnabled="false"
+            app:chipMinHeight="35dp"
+            app:chipStartPadding="15dp" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/lblType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/type"
+        android:textColor="@color/textLightGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chipGroupMedia" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        app:chipSpacingHorizontal="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblType">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipIndividual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="Sinhala"
+            android:textColor="@color/background"
+            app:checkedIcon="@drawable/ic_check"
+            app:checkedIconVisible="true"
+            app:chipBackgroundColor="@color/pink"
+            app:chipEndPadding="15dp"
+            app:chipIconEnabled="false"
+            app:chipMinHeight="35dp"
+            app:chipStartPadding="15dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="English"
+            android:textColor="@color/background"
+            app:checkedIcon="@drawable/ic_check"
+            app:checkedIconVisible="true"
+            app:chipBackgroundColor="@color/pink"
+            app:chipEndPadding="15dp"
+            app:chipIconEnabled="false"
+            app:chipMinHeight="35dp"
+            app:chipStartPadding="15dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMaster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:text="Tamil"
+            android:textColor="@color/background"
+            app:checkedIcon="@drawable/ic_check"
+            app:checkedIconVisible="true"
+            app:chipBackgroundColor="@color/pink"
+            app:chipEndPadding="15dp"
+            app:chipIconEnabled="false"
+            app:chipMinHeight="35dp"
+            app:chipStartPadding="15dp" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/apply_filter"
+        app:backgroundTint="@color/green"
+        app:layout_constraintTop_toBottomOf="@id/chipGroupType" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
