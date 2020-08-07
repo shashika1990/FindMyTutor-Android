@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="335dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginEnd="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="7dp"
+    android:elevation="5dp"
+    app:cardPreventCornerOverlap="true"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/background_blue_gradient_1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:layout_marginStart="10dp"
+            android:id="@+id/imgGraduationHat"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="25dp"
+            android:paddingBottom="25dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="60dp"
+            android:scaleType="fitCenter"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/img_tie" />
+
+        <ImageView
+            android:tint="@color/white"
+            android:id="@+id/iconBooks"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_briefcase_outlined"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgGraduationHat"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/labelDesignation"
+            android:textSize="13dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Associate Software Engineer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iconBooks"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_height="18dp" />
+
+
+        <ImageView
+            android:tint="@color/white"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/iconCompany"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_building"
+            app:layout_constraintStart_toStartOf="@id/iconBooks"
+            app:layout_constraintBottom_toTopOf="@id/iconBooks"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/labelCompany"
+            android:textSize="13dp"
+            android:layout_marginStart="5dp"
+            android:text="Fidenz Technologies Pvt Ltd"
+            app:layout_constraintTop_toTopOf="@id/iconCompany"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iconCompany"
+            app:layout_constraintBottom_toBottomOf="@id/iconCompany"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_height="18dp" />
+
+
+        <ImageView
+            android:tint="@color/white"
+            android:layout_marginTop="10dp"
+            android:id="@+id/iconDuration"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_clock"
+            app:layout_constraintStart_toStartOf="@id/iconBooks"
+            app:layout_constraintTop_toBottomOf="@id/iconBooks"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/labelDuration"
+            android:textSize="13dp"
+            android:layout_marginStart="5dp"
+            android:text="2019 June - 2020 August"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iconDuration"
+            app:layout_constraintStart_toEndOf="@id/iconCompany"
+            app:layout_constraintBottom_toBottomOf="@id/iconDuration"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_height="18dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

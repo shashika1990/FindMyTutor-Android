@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="335dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginEnd="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="7dp"
+    android:elevation="5dp"
+    app:cardPreventCornerOverlap="true"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/background_green_gradient_1"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:id="@+id/imgBriefcase"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="33dp"
+            android:paddingBottom="33dp"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="60dp"
+            android:scaleType="fitCenter"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/ic_graduation_hat_light"/>
+
+        <ImageView
+            android:tint="@color/white"
+            android:id="@+id/iconDesignation"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_img_books_outlined"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgBriefcase"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/labelDesignation"
+            android:textSize="13dp"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Computer Science"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iconDesignation"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_height="18dp" />
+
+
+        <ImageView
+            android:tint="@color/white"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/iconCompany"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_building"
+            app:layout_constraintStart_toEndOf="@id/imgBriefcase"
+            app:layout_constraintBottom_toTopOf="@id/iconDesignation"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/labelCompany"
+            android:textSize="13dp"
+            android:layout_marginStart="5dp"
+            android:text="British Computer Society"
+            app:layout_constraintTop_toTopOf="@id/iconCompany"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iconCompany"
+            app:layout_constraintBottom_toBottomOf="@id/iconCompany"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_height="18dp" />
+
+
+        <ImageView
+            android:tint="@color/white"
+            android:layout_marginTop="10dp"
+            android:id="@+id/iconDuration"
+            android:layout_marginStart="5dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_img_graduation_hat_outlined"
+            app:layout_constraintStart_toEndOf="@id/imgBriefcase"
+            app:layout_constraintTop_toBottomOf="@id/iconDesignation"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/labelDuration"
+            android:textSize="13dp"
+            android:layout_marginStart="5dp"
+            android:text="Professional Qualification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iconDuration"
+            app:layout_constraintStart_toEndOf="@id/iconCompany"
+            app:layout_constraintBottom_toBottomOf="@id/iconDuration"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_height="18dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

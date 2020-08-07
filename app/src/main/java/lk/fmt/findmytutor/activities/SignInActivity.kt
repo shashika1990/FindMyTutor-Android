@@ -11,6 +11,7 @@ import lk.fmt.findmytutor.helpers.Validation
 import lk.fmt.findmytutor.helpers.extensions.snackbarError
 import lk.fmt.findmytutor.listeners.APIServiceListener
 import lk.fmt.findmytutor.services.api.responsemodels.SignInResponse
+import lk.fmt.findmytutor.services.api.service.UserServiceImpl
 import lk.fmt.findmytutor.utils.PreferenceManager
 
 class SignInActivity : AppCompatActivity(), APIServiceListener {
@@ -26,16 +27,17 @@ class SignInActivity : AppCompatActivity(), APIServiceListener {
 
     private fun initActivity() {
         btnSignIn?.setOnClickListener { signIn() }
-        btnSignUp?.setOnClickListener { btnSignIn?.setVisibility(isVisible = true) }
+//        btnSignUp?.setOnClickListener { btnSignIn?.setVisibility(isVisible = true) }
     }
 
     private fun signIn() {
+        goToHomeScreen()
         /*if (validateUserInputs()) {
             UserServiceImpl(this).signIn(userForSignIn)
         }*/
 
-        btnSignIn?.setVisibility(isVisible = false)
-        spinner?.setVisibility = View.VISIBLE
+        /*btnSignIn?.setVisibility(isVisible = false)
+        spinner?.setVisibility = View.VISIBLE*/
     }
 
     private fun validateUserInputs(): Boolean {

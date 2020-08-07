@@ -10,7 +10,7 @@
         app:layout_constraintTop_toTopOf="@id/layoutBasicInfo"
         app:layout_constraintBottom_toBottomOf="@id/layoutBasicInfo"
         android:layout_width="match_parent"
-        android:src="@drawable/background_orange"
+        android:src="@drawable/background_blue_gradient_1"
         android:scaleType="centerCrop"
         android:layout_height="0dp" />
 
@@ -18,7 +18,6 @@
         android:id="@+id/layoutBasicInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/transparent"
         android:paddingTop="30dp"
         android:paddingBottom="20dp"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,8 +25,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgProfilePic"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_centerHorizontal="true"
             android:src="@drawable/img_profile_pic_placeholder" />
 
@@ -57,15 +56,13 @@
         <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:tint="@color/pureWhite"
             android:layout_below="@id/txtFullName"
             android:layout_toStartOf="@id/vLine"
             android:background="@drawable/button_round_corners"
             android:padding="10dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_phone"
-            android:text="Phone"
-            android:textAllCaps="false"
-            android:textColor="@color/background"
             android:translationZ="5dp" />
 
         <View
@@ -80,15 +77,13 @@
         <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:tint="@color/pureWhite"
             android:layout_below="@id/txtFullName"
             android:layout_toEndOf="@id/vLine"
             android:background="@drawable/button_round_corners"
             android:padding="10dp"
             android:scaleType="centerInside"
             android:src="@drawable/ic_email"
-            android:text="Email"
-            android:textAllCaps="false"
-            android:textColor="@color/background"
             android:translationZ="5dp" />
 
     </RelativeLayout>
@@ -102,8 +97,148 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
+            android:background="@color/background"
             android:layout_height="wrap_content">
 
+            <!--personal information-->
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="@string/personal_information"
+                android:id="@+id/labelPersonalInfo"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPersonalInfo"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="0dp"
+                android:background="@color/pureWhite"
+                app:cardCornerRadius="7dp"
+                app:cardPreventCornerOverlap="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labelPersonalInfo"
+                android:layout_height="wrap_content" >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:id="@+id/icPerson"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_person"/>
+
+                    <TextView
+                        android:id="@+id/textViewName"
+                        app:layout_constraintTop_toTopOf="@id/icPerson"
+                        app:layout_constraintBottom_toBottomOf="@id/icPerson"
+                        android:text="Shashika Jayawardene"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toEndOf="@id/icPerson"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:gravity="center_vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_marginTop="7dp"
+                        app:layout_constraintTop_toBottomOf="@id/icPerson"
+                        android:id="@+id/icEmail"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_email"/>
+
+                    <TextView
+                        android:id="@+id/textViewEmail"
+                        app:layout_constraintTop_toTopOf="@id/icEmail"
+                        app:layout_constraintBottom_toBottomOf="@id/icEmail"
+                        android:text="shashika.janith@gmail.com"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toEndOf="@id/icEmail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:gravity="center_vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_marginTop="7dp"
+                        app:layout_constraintTop_toBottomOf="@id/icEmail"
+                        android:id="@+id/icPhone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_phone"/>
+
+                    <TextView
+                        android:id="@+id/textViewPhone"
+                        app:layout_constraintTop_toTopOf="@id/icPhone"
+                        app:layout_constraintBottom_toBottomOf="@id/icPhone"
+                        android:text="071-7580287"
+                        android:layout_marginStart="10dp"
+                        app:layout_constraintStart_toEndOf="@id/icPhone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:gravity="center_vertical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--personal information-->
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="@string/qualifications"
+                android:id="@+id/labelQualifications"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardPersonalInfo"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewQualifications"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labelQualifications"
+                android:layout_height="140dp" />
+
+            <!--personal information-->
+            <TextView
+                android:layout_marginTop="10dp"
+                android:text="@string/experiences"
+                android:id="@+id/labelExperiences"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerViewQualifications"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewExperiences"
+                android:layout_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/labelExperiences"
+                android:layout_height="140dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

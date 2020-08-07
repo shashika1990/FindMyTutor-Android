@@ -9,4 +9,7 @@ import retrofit2.http.POST
 interface UserService : SuperService {
     @POST("/api/users/authenticate")
     fun signIn(@Body userForSignIn: UserForSignIn): Call<SignInResponse>
+
+    @POST("")
+    fun signUp(): Call<SignInResponse>
 }

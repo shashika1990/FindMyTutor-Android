@@ -2,410 +2,402 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:fitsSystemWindows="true"
     tools:context=".activities.CourseDetailsActivity">
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:context=".activities.MemoryDetailsActivity">
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/htab_appbar"
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/mainLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/background">
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:id="@+id/layoutHeader"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:expandedTitleGravity="top"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlways|snap"
-                app:titleEnabled="true">
+                android:alpha="1"
+                android:background="@color/colorPrimary"
+                android:paddingBottom="20dp"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <RelativeLayout
-                    android:id="@+id/viewPager"
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/transparent"
+                    android:padding="3dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_arrow" />
+
+                <TextView
+                    android:id="@+id/txtCourseTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/background_gradient"
-                    android:paddingBottom="20dp"
-                    app:layout_collapseMode="parallax"
-                    app:layout_collapseParallaxMultiplier="0.5">
+                    android:layout_below="@id/btnBack"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Automobile Engineering for Beginners"
+                    android:textColor="@color/background"
+                    android:textSize="22sp" />
 
-                    <androidx.appcompat.widget.AppCompatImageButton
-                        android:id="@+id/btnBack"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@color/transparent"
-                        android:padding="3dp"
+                <TextView
+                    android:id="@+id/txtSubject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtCourseTitle"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Automobile Engineering"
+                    android:textColor="@color/background" />
+
+                <RelativeLayout
+                    android:id="@+id/lanLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtSubject"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp">
+
+                    <ImageView
+                        android:id="@+id/icLanguage"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="7dp"
                         android:scaleType="centerInside"
-                        android:src="@drawable/ic_arrow" />
+                        android:src="@drawable/ic_language"
+                        android:tint="@color/background" />
 
                     <TextView
-                        android:id="@+id/txtCourseTitle"
-                        android:layout_width="match_parent"
+                        android:id="@+id/txtLanguage"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/btnBack"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="10dp"
-                        android:ellipsize="end"
-                        android:fontFamily="@font/lato_bold"
-                        android:text="Automobile Engineering for Beginners"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="7dp"
+                        android:layout_toEndOf="@id/icLanguage"
+                        android:text="Sinhala / English / Tamil"
                         android:textColor="@color/background"
-                        android:textSize="22sp" />
-
-                    <TextView
-                        android:id="@+id/txtSubject"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtCourseTitle"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="5dp"
-                        android:text="Automobile Engineering"
-                        android:textColor="@color/background" />
-
-                    <RelativeLayout
-                        android:id="@+id/lanLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/txtSubject"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="10dp">
-
-                        <ImageView
-                            android:id="@+id/icLanguage"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginTop="7dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/ic_language"
-                            android:tint="@color/background" />
-
-                        <TextView
-                            android:id="@+id/txtLanguage"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="7dp"
-                            android:layout_toEndOf="@id/icLanguage"
-                            android:text="Sinhala / English / Tamil"
-                            android:textColor="@color/background"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-
-                    <RelativeLayout
-                        android:id="@+id/gradeLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/lanLayout"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="5dp">
-
-                        <ImageView
-                            android:id="@+id/icGrade"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginTop="7dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/ic_grade"
-                            android:tint="@color/background" />
-
-                        <TextView
-                            android:id="@+id/txtGrade"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="7dp"
-                            android:layout_toEndOf="@id/icGrade"
-                            android:text="O/L (Oridinary Level)"
-                            android:textColor="@color/background"
-                            android:textSize="14sp" />
-
-                    </RelativeLayout>
-
-                    <HorizontalScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/gradeLayout"
-                        android:layout_marginTop="15dp"
-                        android:scrollIndicators="none"
-                        android:scrollbars="none">
-
-                        <com.google.android.material.chip.ChipGroup
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            app:singleLine="true">
-
-                            <com.google.android.material.chip.Chip
-                                android:id="@+id/chipDate"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="15dp"
-                                android:clickable="false"
-                                android:text="Monday | 18:00"
-                                android:textColor="@color/background"
-                                app:chipBackgroundColor="@color/pink"
-                                app:chipEndPadding="15dp"
-                                app:chipIcon="@drawable/ic_date"
-                                app:chipIconEnabled="true"
-                                app:chipIconTint="@color/background"
-                                app:chipIconVisible="true"
-                                app:chipMinHeight="60dp"
-                                app:chipStartPadding="15dp" />
-
-                            <com.google.android.material.chip.Chip
-                                android:id="@+id/chipLocation"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/gradeLayout"
-                                android:layout_marginStart="15dp"
-                                android:layout_marginEnd="15dp"
-                                android:clickable="false"
-                                android:text="Nugegoda, Colombo"
-                                android:textColor="@color/background"
-                                app:chipBackgroundColor="@color/pink"
-                                app:chipEndPadding="15dp"
-                                app:chipIcon="@drawable/ic_location"
-                                app:chipIconEnabled="true"
-                                app:chipIconTint="@color/background"
-                                app:chipIconVisible="true"
-                                app:chipMinHeight="60dp"
-                                app:chipStartPadding="15dp" />
-
-                        </com.google.android.material.chip.ChipGroup>
-
-                    </HorizontalScrollView>
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
 
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:background="@color/background"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/background">
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardTutor"
+                <RelativeLayout
+                    android:id="@+id/gradeLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/lanLayout"
                     android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/icGrade"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="7dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_img_graduation_hat_outlined"
+                        android:tint="@color/background" />
+
+                    <TextView
+                        android:id="@+id/txtGrade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="7dp"
+                        android:layout_toEndOf="@id/icGrade"
+                        android:text="O/L (Oridinary Level)"
+                        android:textColor="@color/background"
+                        android:textSize="14sp" />
+
+                </RelativeLayout>
+
+                <HorizontalScrollView
+                    android:id="@+id/chipGroupScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/gradeLayout"
                     android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
-                    app:cardBackgroundColor="@color/pureWhite"
-                    app:cardElevation="5dp"
-                    app:contentPadding="10dp"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:scrollIndicators="none"
+                    android:scrollbars="none">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chipGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        app:singleLine="true">
 
-                        <TextView
-                            android:id="@+id/titleTutor"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/lato_bold"
-                            android:text="Tutor"
-                            android:textColor="@color/pink"
-                            android:textSize="20sp"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <ImageView
-                            android:id="@+id/icPerson"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_centerVertical="true"
-                            android:layout_marginTop="10dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/ic_person"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/titleTutor" />
-
-                        <TextView
-                            android:id="@+id/txtDisplayName"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="10dp"
-                            android:ellipsize="end"
-                            android:fontFamily="@font/lato_bold"
-                            android:text="Shashika"
-                            android:textColor="@color/textDarkGray"
-                            android:textSize="17sp"
-                            app:layout_constraintBottom_toBottomOf="@id/icPerson"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/icPerson"
-                            app:layout_constraintTop_toTopOf="@id/icPerson" />
-
-                        <TextView
-                            android:id="@+id/txtFullName"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:ellipsize="end"
-                            android:text="Shashika Janith"
-                            android:textColor="@color/textDarkGray"
-                            android:textSize="15sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/icPerson"
-                            app:layout_constraintTop_toBottomOf="@id/txtDisplayName" />
-
-                        <ImageView
-                            android:id="@+id/icPhone"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginTop="7dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/ic_phone"
-                            android:tint="@color/textDarkGray"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/txtFullName" />
-
-                        <TextView
-                            android:id="@+id/txtPhone"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:ellipsize="end"
-                            android:text="071-5180287"
-                            android:textColor="@color/textLightGray"
-                            android:textSize="15sp"
-                            app:layout_constraintBottom_toBottomOf="@id/icPhone"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/icPhone"
-                            app:layout_constraintTop_toTopOf="@id/icPhone" />
-
-                        <ImageView
-                            android:id="@+id/icEmail"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_marginTop="7dp"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/ic_email"
-                            android:tint="@color/textDarkGray"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/icPhone" />
-
-                        <TextView
-                            android:id="@+id/txtEmail"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:ellipsize="end"
-                            android:text="shashika.janith@email.com"
-                            android:textColor="@color/textLightGray"
-                            android:textSize="15sp"
-                            app:layout_constraintBottom_toBottomOf="@id/icEmail"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/icEmail"
-                            app:layout_constraintTop_toTopOf="@id/icEmail" />
-
-                        <Button
-                            android:id="@+id/outlinedButton"
-                            style="?attr/materialButtonOutlinedStyle"
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipDate"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:text="View Profile"
-                            android:textAllCaps="false"
-                            android:textColor="@color/pink"
-                            android:textSize="14sp"
-                            app:elevation="2dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/txtEmail"
-                            app:rippleColor="@color/pink"
-                            app:strokeColor="@color/pink" />
+                            android:layout_marginStart="15dp"
+                            android:clickable="false"
+                            android:text="Monday | 18:00"
+                            android:textColor="@color/background"
+                            app:chipBackgroundColor="@color/colorAccent"
+                            app:chipEndPadding="15dp"
+                            app:chipIcon="@drawable/ic_date"
+                            app:chipIconEnabled="true"
+                            app:chipIconTint="@color/background"
+                            app:chipIconVisible="true"
+                            app:chipMinHeight="60dp"
+                            app:chipStartPadding="15dp" />
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipLocation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/gradeLayout"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:clickable="false"
+                            android:text="Nugegoda, Colombo"
+                            android:textColor="@color/background"
+                            app:chipBackgroundColor="@color/colorAccent"
+                            app:chipEndPadding="15dp"
+                            app:chipIcon="@drawable/ic_location"
+                            app:chipIconEnabled="true"
+                            app:chipIconTint="@color/background"
+                            app:chipIconVisible="true"
+                            app:chipMinHeight="60dp"
+                            app:chipStartPadding="15dp" />
 
-                </com.google.android.material.card.MaterialCardView>
+                    </com.google.android.material.chip.ChipGroup>
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardDesc"
+                </HorizontalScrollView>
+
+            </RelativeLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTutor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                app:cardBackgroundColor="@color/pureWhite"
+                app:cardElevation="5dp"
+                app:contentPadding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/layoutHeader">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tutorMainLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="15dp"
-                    app:cardBackgroundColor="@color/pureWhite"
-                    app:cardElevation="5dp"
-                    app:contentPadding="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/cardTutor">
+                    android:layout_height="wrap_content">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <TextView
+                        android:id="@+id/titleTutor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Tutor"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/icPerson"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_person"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/titleTutor" />
+
+                    <TextView
+                        android:id="@+id/txtDisplayName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Shashika"
+                        android:textColor="@color/textDarkGray"
+                        android:textSize="17sp"
+                        app:layout_constraintBottom_toBottomOf="@id/icPerson"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/icPerson"
+                        app:layout_constraintTop_toTopOf="@id/icPerson" />
+
+                    <TextView
+                        android:id="@+id/txtFullName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:ellipsize="end"
+                        android:text="Shashika Janith"
+                        android:textColor="@color/textDarkGray"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/icPerson"
+                        app:layout_constraintTop_toBottomOf="@id/txtDisplayName" />
+
+                    <ImageView
+                        android:id="@+id/icPhone"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="7dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_phone"
+                        android:tint="@color/textDarkGray"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtFullName" />
+
+                    <TextView
+                        android:id="@+id/txtPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:ellipsize="end"
+                        android:text="071-5180287"
+                        android:textColor="@color/textLightGray"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@id/icPhone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/icPhone"
+                        app:layout_constraintTop_toTopOf="@id/icPhone" />
+
+                    <ImageView
+                        android:id="@+id/icEmail"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="7dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_email"
+                        android:tint="@color/textDarkGray"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/icPhone" />
+
+                    <TextView
+                        android:id="@+id/txtEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:ellipsize="end"
+                        android:text="shashika.janith@email.com"
+                        android:textColor="@color/textLightGray"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toBottomOf="@id/icEmail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/icEmail"
+                        app:layout_constraintTop_toTopOf="@id/icEmail" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnViewProfile"
+                        style="?attr/materialButtonOutlinedStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="@string/profile"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="14sp"
+                        app:elevation="2dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtEmail"
+                        app:rippleColor="@color/colorAccent"
+                        app:strokeColor="@color/colorAccent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                app:cardBackgroundColor="@color/pureWhite"
+                app:cardElevation="5dp"
+                app:contentPadding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardTutor">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/descLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/titleDesc"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Description"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="20sp"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
-                            android:id="@+id/titleDesc"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/lato_bold"
-                            android:text="Description"
-                            android:textColor="@color/pink"
-                            android:textSize="20sp"
-                            app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/txtDesc"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:ellipsize="end"
+                        android:maxLines="6"
+                        android:text="@string/sample_text"
+                        android:textColor="@color/textDarkGray"
+                        android:textSize="15sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/titleDesc" />
 
-                        <TextView
-                            android:id="@+id/txtDesc"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:ellipsize="end"
-                            android:maxLines="6"
-                            android:text="@string/sample_text"
-                            android:textColor="@color/textDarkGray"
-                            android:textSize="15sp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/titleDesc" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
-                </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.motion.widget.MotionLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
-        </androidx.core.widget.NestedScrollView>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabCall"
-            style="@style/Widget.MaterialComponents.FloatingActionButton"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            android:scaleType="centerInside"
-            app:backgroundTint="@color/pink"
-            app:elevation="5dp"
-            app:pressedTranslationZ="8dp"
-            app:srcCompat="@drawable/ic_phone"
-            app:tint="@color/pureWhite" />
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCall"
+        style="@style/Widget.MaterialComponents.FloatingActionButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:scaleType="centerInside"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:pressedTranslationZ="8dp"
+        app:srcCompat="@drawable/ic_phone"
+        app:tint="@color/pureWhite" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,4 +20,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="boxBackgroundColor">@color/pureWhite</item>
+    </style>
+
 </resources>

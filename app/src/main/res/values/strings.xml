@@ -1,13 +1,40 @@
 <resources>
     <string name="app_name">Find My Tutor</string>
     <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="display_name">Display Name</string>
+    <string name="gender">Gender</string>
+    <string name="mobile">Mobile</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
     <string name="sign_in">Sign in</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="tutor">Tutor</string>
     <string name="student">Student</string>
     <string name="or">- or -</string>
     <string name="sign_up">Sign up</string>
+    <string name="got_it">Got it</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="tution">Tution</string>
+    <string name="courses">Courses</string>
+    <string name="personal_information">Personal Information</string>
+    <string name="qualifications">Qualifications</string>
+    <string name="experiences">Experiences</string>
+
+    <string name="subject">Subject</string>
+    <string name="grade">Grade</string>
+    <string name="day">Day</string>
+
+    <string name="individual">Individual</string>
+    <string name="group">Group</string>
+    <string name="mass">Mass</string>
+
+    <string name="search">Search</string>
+    <string name="register">Register</string>
+    <string name="register_with">Register with</string>
 
     <!--validation messages and alerts-->
     <string name="no_active_connection">No active internet connection.</string>
@@ -17,12 +44,22 @@
 
     <!--sample text-->
     <string name="sample_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</string>
+    <string name="sample_quote">All that you\'re is the result of what you have thought. Mind is everything.\n~Lord Buddha</string>
     <string name="slogan">Learn Today,\nSucceed Tomorrow</string>
-    <string name="subject">Subject</string>
-    <string name="grade">Grade</string>
     <string name="go">Go</string>
     <string name="medium">Medium</string>
     <string name="filter_content">Filter Content</string>
     <string name="apply_filter">Apply Filter</string>
     <string name="type">Type</string>
+    <string name="profile">Profile</string>
+    <string name="toolbar_title">Toolbar Title</string>
+
+    <!--    days of week-->
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
 </resources>

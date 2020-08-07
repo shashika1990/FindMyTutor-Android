@@ -8,6 +8,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_courses.*
+import kotlinx.android.synthetic.main.layout_toolbar_with_back.*
 import lk.fmt.findmytutor.R
 import lk.fmt.findmytutor.adapters.CoursesAdapter
 import lk.fmt.findmytutor.helpers.mappers.Mapper
@@ -38,10 +39,13 @@ class CoursesActivity : AppCompatActivity(), RecyclerViewItemListener, APIServic
         }
 
         fetchCourses()
+
+        btnBack?.setOnClickListener { super.onBackPressed() }
+        toolbarTitle?.text = resources.getText(R.string.tution)
     }
 
     private fun fetchCourses() {
-        CourseServiceImpl(this).getCourses()
+        CourseServiceImpl(this).getCourses(10, 0)
     }
 
     class DividerItemDecoration : RecyclerView.ItemDecoration() {
@@ -69,14 +73,14 @@ class CoursesActivity : AppCompatActivity(), RecyclerViewItemListener, APIServic
      */
     override fun onItemClicked(position: Int) {
         Intent(this, CourseDetailsActivity::class.java).apply {
-            putExtra("course", courseList[position])
+            // putExtra("course", courseList[position])
             startActivity(this)
         }
     }
 
     override fun <T> onSuccess(data: T?) {
         data?.let {
-            val res = data as ArrayList<CoursesResponse>
+            val res = data as List<CoursesResponse>
 
             for (item in res) {
                 courseList.add(Mapper.map(item))

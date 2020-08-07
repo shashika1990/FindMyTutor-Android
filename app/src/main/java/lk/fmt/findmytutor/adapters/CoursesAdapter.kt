@@ -22,11 +22,10 @@ class CoursesAdapter(private val courseList: List<Course>, private val listener:
 
     override fun getItemCount(): Int {
         return courseList.size
-//        return 10
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindData(position, courseList[position], listener)
+        holder.bindData(courseList[position], position, listener)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -34,11 +33,14 @@ class CoursesAdapter(private val courseList: List<Course>, private val listener:
         var subject: TextView = itemView.findViewById(R.id.txtSubject)
         var tutorName: TextView = itemView.findViewById(R.id.txtTutorName)
         var medium: TextView = itemView.findViewById(R.id.txtLanguage)
-        var venue: TextView = itemView.findViewById(R.id.txtVenue)
-        var location: TextView = itemView.findViewById(R.id.txtLocation)
 
-        fun bindData(position: Int, course: Course, listener: RecyclerViewItemListener) {
+        fun bindData(course: Course, position: Int, listener: RecyclerViewItemListener) {
             itemView.setOnClickListener { listener.onItemClicked(position) }
+
+            courseTitle.text = course.title
+            subject.text = course.subject
+            tutorName.text = course.tutor?.fullName ?: "n/a"
+            medium.text = course.mediumClient
         }
 
     }

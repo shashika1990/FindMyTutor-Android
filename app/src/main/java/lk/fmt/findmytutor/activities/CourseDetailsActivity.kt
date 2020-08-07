@@ -4,7 +4,26 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.constraintlayout.motion.widget.MotionLayout
 import kotlinx.android.synthetic.main.activity_course_details.*
+import kotlinx.android.synthetic.main.activity_course_details_start.*
+import kotlinx.android.synthetic.main.activity_course_details_start.btnBack
+import kotlinx.android.synthetic.main.activity_course_details_start.btnViewProfile
+import kotlinx.android.synthetic.main.activity_course_details_start.fabCall
+import kotlinx.android.synthetic.main.activity_course_details_start.mainLayout
+import kotlinx.android.synthetic.main.activity_course_details_start.txtCourseTitle
+import kotlinx.android.synthetic.main.activity_course_details_start.txtDesc
+import kotlinx.android.synthetic.main.activity_course_details_start.txtDisplayName
+import kotlinx.android.synthetic.main.activity_course_details_start.txtEmail
+import kotlinx.android.synthetic.main.activity_course_details_start.txtFullName
+import kotlinx.android.synthetic.main.activity_course_details_start.txtGrade
+import kotlinx.android.synthetic.main.activity_course_details_start.txtLanguage
+import kotlinx.android.synthetic.main.activity_course_details_start.txtPhone
+import kotlinx.android.synthetic.main.activity_course_details_start.txtSubject
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import lk.fmt.findmytutor.R
 import lk.fmt.findmytutor.models.Course
 
@@ -14,17 +33,37 @@ class CourseDetailsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_course_details)
+        setContentView(R.layout.activity_course_details_start)
+
+        /*val constraintSet = ConstraintSet()
+        constraintSet.clone(this, R.layout.activity_course_details)
+        val transition = ChangeBounds()
+        transition.duration = 1000
+        transition.interpolator = AnticipateOvershootInterpolator()
+        TransitionManager.beginDelayedTransition(mainLayout, transition)
+        constraintSet.applyTo(mainLayout)*/
 
         initActivity()
     }
 
+
     private fun initActivity() {
         btnBack?.setOnClickListener { super.onBackPressed() }
         fabCall?.setOnClickListener { openDialer() }
+        btnViewProfile?.setOnClickListener { navigateToProfileScreen() }
 
-        bindData()
+        // bindData()
+         animate()
     }
+
+
+    private fun animate() {
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(100)
+            (mainLayout as MotionLayout).transitionToEnd()
+        }
+    }
+
 
     /**
      * Binds course details to the UI
@@ -46,6 +85,17 @@ class CourseDetailsActivity : AppCompatActivity() {
             if (it.isNotEmpty()) txtDesc?.text = course.description
             else txtDesc?.text = "N/A"
         }
+    }
+
+
+    /**
+     * Go to TutorProfileActivity
+     */
+    private fun navigateToProfileScreen() {
+        Intent(this, TutorProfileActivity::class.java)
+            .apply {
+                startActivity(this)
+            }
     }
 
     /**

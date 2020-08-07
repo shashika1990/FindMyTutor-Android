@@ -8,8 +8,10 @@ import retrofit2.http.Query
 interface CourseService : SuperService {
 
     @GET("/api/courses")
-    fun getCourseList(
-        @Query("\$filter") filter: String,
-        @Query("\$count") expand: String
+    fun getCourses(
+        @Query("\$expand") expand: String,
+        @Query("\$top") top: Int,
+        @Query("\$skip") skip: Int,
+        @Query("\$count") count: Boolean
     ): Call<List<CoursesResponse>>
 }

@@ -4,64 +4,61 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class CoursesResponse(
-    @SerializedName("id")
+    @SerializedName("Id")
     @Expose
-    var id: String,
-    @SerializedName("title")
+    var id: String?,
+    @SerializedName("Title")
     @Expose
-    var title: String,
-    @SerializedName("description")
+    var title: String?,
+    @SerializedName("Description")
     @Expose
-    var description: String,
-    @SerializedName("district")
+    var description: String?,
+    @SerializedName("District")
     @Expose
-    var district: String,
-    @SerializedName("city")
+    var district: String?,
+    @SerializedName("City")
     @Expose
-    var city: String,
-    @SerializedName("startDate")
+    var city: String?,
+    @SerializedName("StartDate")
     @Expose
-    var startDate: String,
-    @SerializedName("time")
+    var startDate: String?,
+    @SerializedName("Time")
     @Expose
-    var time: String,
-    @SerializedName("day")
+    var time: String?,
+    @SerializedName("Day")
     @Expose
-    var day: String,
-    @SerializedName("subject")
+    var day: String?,
+    @SerializedName("Subject")
     @Expose
-    var subject: String,
-    @SerializedName("grade")
+    var subject: String?,
+    @SerializedName("Grade")
     @Expose
-    var grade: String,
-    @SerializedName("active")
+    var grade: String?,
+    @SerializedName("Active")
     @Expose
-    var active: Boolean,
-    @SerializedName("classType")
+    var active: Boolean?,
+    @SerializedName("ClassType")
     @Expose
-    var classType: Int,
-    @SerializedName("medium")
+    var classType: Int?,
+    @SerializedName("Medium")
     @Expose
-    var medium: Int,
-    @SerializedName("banner")
+    var medium: Int?,
+    @SerializedName("BannerPath")
     @Expose
-    var banner: Any,
-    @SerializedName("bannerPath")
+    var bannerPath: String?,
+    @SerializedName("CreatedDate")
     @Expose
-    var bannerPath: String,
-    @SerializedName("createdDate")
+    var createdDate: String?,
+    @SerializedName("ModifiedDate")
     @Expose
-    var createdDate: String,
-    @SerializedName("modifiedDate")
+    var modifiedDate: String?,
+    @SerializedName("TutorEmail")
     @Expose
-    var modifiedDate: String,
-    @SerializedName("tutorEmail")
+    var tutorEmail: String?,
+    @SerializedName("TutorUsername")
     @Expose
-    var tutorEmail: String,
-    @SerializedName("tutorUsername")
+    var tutorUsername: String?,
+    @SerializedName("Tutor")
     @Expose
-    var tutorUsername: String,
-    @SerializedName("tutor")
-    @Expose
-    var tutor: TutorResponse
+    var tutor: TutorResponse?
 )

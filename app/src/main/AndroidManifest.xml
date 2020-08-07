@@ -13,33 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.CourseDetailsActivity"></activity>
-        <activity android:name=".activities.CoursesActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activities.TutorProfileActivity"></activity>
+        <activity android:name=".activities.SignUpActivity"></activity>
+        <activity android:name=".activities.TestActivity"></activity>
+        <activity android:name=".activities.CourseDetailsActivity" />
+        <activity android:name=".activities.CoursesActivity"></activity>
+        <activity android:name=".activities.TutorProfileActivity" />
         <activity
             android:name=".activities.LoadingActivity"
             android:theme="@style/LoadingTheme" />
         <activity
             android:name=".activities.SignInActivity"
-            android:theme="@style/SignInTheme"></activity>
+            android:theme="@style/SignInTheme" />
         <activity
             android:name=".activities.Splash"
-            android:theme="@style/SplashTheme">
-            <!--
+            android:theme="@style/SplashTheme"></activity>
+        <activity android:name=".activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
-        <activity android:name=".activities.HomeActivity"></activity>
     </application>
 
 </manifest>
