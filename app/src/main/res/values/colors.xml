@@ -13,6 +13,8 @@
     <color name="textLightGray">#848486</color>
     <color name="textDarkGray">#4E4B4A</color>
 
+    <color name="darkGray">#131313</color>
+
     <color name="purple">#5151c0</color>
     <color name="orange">#ec6c89</color>
     <color name="pink">#ec296b</color>
