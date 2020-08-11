@@ -35,6 +35,9 @@
     <string name="search">Search</string>
     <string name="register">Register</string>
     <string name="register_with">Register with</string>
+    <string name="submit">Submit</string>
+    <string name="rate_your_experience">Rate your experience with us!</string>
+    <string name="where_can_i_improve">Where can I improve?</string>
 
     <!--validation messages and alerts-->
     <string name="no_active_connection">No active internet connection.</string>
